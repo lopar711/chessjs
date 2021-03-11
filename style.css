@@ -20,3 +20,18 @@
  .casillaB{
     background-color:rgb(210, 210, 210);
  }
+
+
+
+ /*PIEZAS*/
+
+ .pieza{
+     width: 4.5em;
+     height: 4.5em;
+     margin: auto;
+     position: relative;
+     transform: rotate(180deg);
+     background-position: center;
+     background-size: contain;
+     background-repeat: no-repeat;
+ }

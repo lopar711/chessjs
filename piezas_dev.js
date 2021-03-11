@@ -1,7 +1,12 @@
-class Pieza{
-    constructor(){
-    alert ("pieza");    
-    }
+import Pieza from './pieza.class';
+
+function drag(){
+    
 }
 
-export class Pieza{}
+let pieza = new Pieza('alfilBlanco','[1,3]', 'blanca');
+
+document.getElementById("C1").appendChild(pieza.crearPieza());
+
+
+console.log(pieza);
