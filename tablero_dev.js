@@ -27,6 +27,8 @@ for(let x = 1; x <= 8; x++){
         casilla.setAttribute("data-color","negra");
         casilla.classList.add("casillaN");
         casilla.id = columnas[x]+""+y+"";
+        casilla.setAttribute("ondrop", 'drop(event)');
+        casilla.setAttribute("ondragover","allowDrop(event)");
         fila.appendChild(casilla);
         colorBool = false;
     }else{
@@ -37,6 +39,8 @@ for(let x = 1; x <= 8; x++){
         casilla.classList.add("casillaB");
         casilla.id = columnas[x]+""+y+"";
         colorBool = true;
+        casilla.setAttribute("ondrop", 'drop(event)');
+        casilla.setAttribute("ondragover","allowDrop(event)");
         fila.appendChild(casilla);
     }
     

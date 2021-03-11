@@ -11,8 +11,7 @@ class Pieza{
         let piezaContenedor = document.createElement('div');
         piezaContenedor.classList.add('pieza');
         piezaContenedor.style.backgroundImage ="url(assets/"+this.tipo+".fw.png)";
-        //piezaContenedor.setAttribute("ondrop", 'drop(event)');
-        //piezaContenedor.setAttribute("ondragover","allowDrop(event)");
+        piezaContenedor.setAttribute("id", this.tipo);
         piezaContenedor.setAttribute("draggable","true");
         piezaContenedor.setAttribute("ondragstart","drag(event)");
       
