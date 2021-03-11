@@ -1,8 +1,6 @@
 import Pieza from './pieza.class';
 
-function drag(){
-    
-}
+
 
 let pieza = new Pieza('alfilBlanco','[1,3]', 'blanca');
 

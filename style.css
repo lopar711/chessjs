@@ -7,7 +7,7 @@
      min-height: 20em;
      background-color:rgb(48, 148, 106);
      display:flex;
-     transform: rotateX(180deg);
+     /*transform: rotateX(180deg);*/
  }
 
  .casilla{
@@ -30,8 +30,10 @@
      height: 4.5em;
      margin: auto;
      position: relative;
-     transform: rotate(180deg);
+     top: .4em;
+     /*transform: rotate(180deg);*/
      background-position: center;
      background-size: contain;
      background-repeat: no-repeat;
+     /*background-color: red;*/
  }

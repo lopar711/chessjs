@@ -1,7 +1,7 @@
 //tablero
 let tablero = document.getElementById('tablero');
 
-let colorBool = true;
+let colorBool = false;
 const columnas = new Array();
 columnas[1] = "A";
 columnas[2] = "B";
@@ -18,7 +18,7 @@ for(let x = 1; x <= 8; x++){
     fila.classList.add("columna");
     fila.setAttribute("data-columna",columnas[x]);
 
-    for(let y = 1; y <= 8; y++){
+    for(let y = 8; y >= 1; y--){
 
     if(colorBool){
         let casilla = document.createElement('div');
