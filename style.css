@@ -1,0 +1,22 @@
+ 
+ .tablero{
+     width: 80%;
+     margin: auto;
+    /* margin-left: .5em; */
+     height: auto;
+     min-height: 20em;
+     background-color:rgb(48, 148, 106);
+     display:flex;
+     transform: rotateX(180deg);
+ }
+
+ .casilla{
+     width: 5em;
+     height: 5em;
+ }
+ .casillaN{
+    background-color:#111;
+ }
+ .casillaB{
+    background-color:rgb(210, 210, 210);
+ }
