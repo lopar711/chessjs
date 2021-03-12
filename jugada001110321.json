@@ -1,0 +1,26 @@
+{
+    "nombre":"Jugada Uno",
+    "posicion": {
+            "blancas":{
+            "torreBlanca":"A1",
+            "caballoBlanco":"B1",
+            "alfilBlanco":"C1",
+            "reinaBlanca":"D1",
+            "reyBlanco":"E1",
+            "alfilBlancoII":"F1",
+            "caballoBlancoII":"G1",
+            "torreBlancaII":"H1"
+        },
+        "negras":{
+            "torreBlanca":"A8",
+            "caballoBlanco":"B8",
+            "alfilBlanco":"C8",
+            "reinaBlanca":"D8",
+            "reyBlanco":"E8",
+            "alfilBlancoII":"F8",
+            "caballoBlancoII":"G8",
+            "torreBlancaII":"H8"
+        }
+        
+    }
+}
