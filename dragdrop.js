@@ -6,7 +6,13 @@ const drag = (ev)=>{
 const drop = (ev)=>{
     ev.preventDefault();
     var data = ev.dataTransfer.getData("piezaId");
-    ev.target.appendChild(document.getElementById(data));
+    try{
+        ev.target.appendChild(document.getElementById(data));
+    }
+    catch(e){
+        console.log("nada, mismo lugar")
+    }
+    
 }
 
 const allowDrop = (ev)=>{
