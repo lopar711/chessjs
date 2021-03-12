@@ -1,7 +1,7 @@
 import Pieza from './pieza.class';
 
 const jugadaActual = ()=>{
-fetch('http://127.0.0.1/chessjs/jugada001110321.json')
+fetch('http://127.0.0.1/chessjs/jugada110321_ruy_lopez.json')
   .then(response => response.json())
   .then(data => {
 
