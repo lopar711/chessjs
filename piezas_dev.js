@@ -2,7 +2,6 @@ import Pieza from './pieza.class';
 
 var stockfish = STOCKFISH();
 
-
 //https://www.chess.com/live/game/5517413860
 const jugadaActual = ()=>{
 fetch('http://127.0.0.1/chessjs/jagada_fem_test.json')
@@ -15,7 +14,7 @@ fetch('http://127.0.0.1/chessjs/jagada_fem_test.json')
     stockfish.postMessage("uci");
     stockfish.postMessage("ucinewgame");
     stockfish.postMessage("position fen " + jugada);
-    stockfish.postMessage("go depth 18");
+    stockfish.postMessage("go depth 8");
 
 
     console.log(stockfish)
