@@ -1,5 +1,5 @@
 {
-    "nombre":"Posición inicial",
+    "nombre":"Ruy Lopez vs Vienesa var lopar_rnd",
     "posicion": {
             "blancas":{
             "torreBlanca":"A1",
@@ -8,7 +8,7 @@
             "reinaBlanca":"D1",
             "reyBlanco":"E1",
             "alfilBlancoII":"B5",
-            "caballoBlancoII":"G1",
+            "caballoBlancoII":"F3",
             "torreBlancaII":"H1",
             "PBA":"A2",
             "PBB":"B2",
@@ -38,7 +38,8 @@
             "PNF":"F7",
             "PNG":"G7",
             "PNH":"H7"
-        }
+        },
+        "fen":"r1bqkb1r/pppp1ppp/2n5/1n1Np3/8/5N2/PPPP1PPP/R1BQR1K1 b Qkq - 4 4"
         
     }
 }

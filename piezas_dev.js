@@ -2,24 +2,28 @@ import Pieza from './pieza.class';
 
 var stockfish = STOCKFISH();
 
-const jugada = "r3kr2/p1N2p1p/Bpn1pnpB/4P3/8/8/PPPN1PPP/R2QK2R b KQq - 0 14";
-stockfish.postMessage("uci");
-stockfish.postMessage("ucinewgame");
-stockfish.postMessage("position fen " + jugada);
-stockfish.postMessage("go depth 8");
 
-
-console.log(stockfish)
-stockfish.onmessage = function(event) {
-//NOTE: Web Workers wrap the response in an object.
-console.log(event.data ? event.data : event);
-
-}
 //https://www.chess.com/live/game/5517413860
 const jugadaActual = ()=>{
-fetch('http://127.0.0.1/chessjs/jugada110321_pos_inicial.json')
+fetch('http://127.0.0.1/chessjs/jagada_fem_test.json')
   .then(response => response.json())
   .then(data => {
+
+    const fen = data.posicion.fen;
+    console.log(fen);
+    const jugada = fen;
+    stockfish.postMessage("uci");
+    stockfish.postMessage("ucinewgame");
+    stockfish.postMessage("position fen " + jugada);
+    stockfish.postMessage("go depth 18");
+
+
+    console.log(stockfish)
+    stockfish.onmessage = function(event) {
+    //NOTE: Web Workers wrap the response in an object.
+    console.log(event.data ? event.data : event);
+
+}
 
     for( let mov in data.posicion.blancas){
        
