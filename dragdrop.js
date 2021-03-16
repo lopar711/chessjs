@@ -5,10 +5,15 @@ const drag = (ev)=>{
 
 const drop = (ev)=>{
     ev.preventDefault();
+   // console.log(ev.target.childNodes)
     var data = ev.dataTransfer.getData("piezaId");
     try{
-        ev.target.appendChild(document.getElementById(data));
-        console.log(data);
+        
+        if(ev.target.parentNode.classList.contains("casilla")){
+            acciones.comer(ev.target.parentNode, data)
+        }else{
+           acciones.mover(ev.target, data);
+        }
     }
     catch(e){
         console.log("nada, mismo lugar")
@@ -18,4 +23,7 @@ const drop = (ev)=>{
 
 const allowDrop = (ev)=>{
     ev.preventDefault();
+}
+const noAllowDrop = (ev)=> {
+   // ev.stopPropagation();
 }

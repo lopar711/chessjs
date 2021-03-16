@@ -16,6 +16,7 @@ class Pieza{
         piezaContenedor.setAttribute("id", this.id);
         piezaContenedor.setAttribute("draggable","true");
         piezaContenedor.setAttribute("ondragstart","drag(event)");
+       // piezaContenedor.setAttribute("ondrop", "noAllowDrop(event)");
       
         return piezaContenedor;
     }

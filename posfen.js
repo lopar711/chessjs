@@ -85,7 +85,7 @@ fetch('http://127.0.0.1/chessjs/jagada_150321_italiana.json')
     stockfish.postMessage("uci");
     //stockfish.postMessage("ucinewgame");
     stockfish.postMessage("position fen " + jugada);
-    stockfish.postMessage("go depth 6");
+    stockfish.postMessage("go depth 3");
     armarTableroJugada(jugada);
     stockfish.onmessage = function(event) {
     //NOTE: Web Workers wrap the response in an object.
