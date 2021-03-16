@@ -8,6 +8,7 @@ const drop = (ev)=>{
     var data = ev.dataTransfer.getData("piezaId");
     try{
         ev.target.appendChild(document.getElementById(data));
+        console.log(data);
     }
     catch(e){
         console.log("nada, mismo lugar")

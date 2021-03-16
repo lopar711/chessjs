@@ -7,9 +7,42 @@ columnas[4] = "D";
 columnas[5] = "E";
 columnas[6] = "F";
 columnas[7] = "G";
-columnas[8] = "H"; 
+columnas[8] = "H";
+
+const piezasFen = {
+  "r" : "torreNegra",
+  "n" : "caballoNegro",
+  "b" : "alfilNegro",
+  "q" : "reinaNegra",
+  "k" : "reyNegro",
+  "p" : "peonNegro",
+  "R" : "torreBlanca",
+  "N" : "caballoBlanco",
+  "B" : "alfilBlanco",
+  "Q" : "reinaBlanca",
+  "K" : "reyBlanco",
+  "P" : "peonBlanco"
+
+}
 
 var stockfish = STOCKFISH();
+
+
+const crearPosFila = (fenPos, fila) =>{
+  //console.log("fila =" + fila)
+  let piezaPos = "A0";
+  for(let c = 0 ; c < fenPos.length; c++){
+   // console.log(fenPos[c]);
+   piezaPos = columnas[c+1]+fila;
+   //console.log(piezaPos)
+    if(typeof piezasFen[fenPos[c]] === "string") {
+      let pieza = new Pieza(piezasFen[fenPos[c]], "[]", "loquesea", "", fenPos[c]+""+piezaPos);
+      document.getElementById(piezaPos).appendChild(pieza.crearPieza());
+      
+    }
+   
+  }
+}
 
 const SplitFen = (jugada) =>{
 
@@ -17,6 +50,19 @@ const SplitFen = (jugada) =>{
   let arrLastPosSplt = arrFen[7].split(" ");
   arrFen[7] = arrLastPosSplt[0];
   arrLastPosSplt.splice(0,1);
+ 
+  for(let i = 0; i< arrFen.length; i++ ){
+      arrFen[i] = arrFen[i].replaceAll(/[1]/g,"x").
+      replaceAll(/[2]/g,"11").
+      replaceAll(/[3]/g,"111").
+      replaceAll(/[4]/g,"1111").
+      replaceAll(/[5]/g,"11111").
+      replaceAll(/[6]/g,"111111").
+      replaceAll(/[7]/g,"1111111").
+      replaceAll(/[8]/g,"11111111")
+      ;
+  }
+  
   return { fenPos: arrFen, gameMetadata: arrLastPosSplt};
 
 }
@@ -24,28 +70,16 @@ const SplitFen = (jugada) =>{
 const armarTableroJugada = (jugada)=>{
   
   let fenArr = SplitFen(jugada);
-  console.log(fenArr.fenPos);
-  let piezaPos = "A0";
+  
   for (let i = 0; i < fenArr.fenPos.length; i++){
-    
-    if(i == 0){
-      for(let c = 0 ; c < fenArr.fenPos[0].length; c++){
-        console.log(fenArr.fenPos[0][c]);
-        piezaPos = columnas[c+1]+"8";
-        console.log(piezaPos);
-        let pieza = new Pieza("torreNegra", "[]", "negra", "", piezaPos);
-        document.getElementById(piezaPos).appendChild(pieza.crearPieza());
-      }
-      
-    }
+      crearPosFila(fenArr.fenPos[i], parseInt((i-8)) * -1);
   }
 }
 
 const jugadaActual = ()=>{
-fetch('http://127.0.0.1/chessjs/jagada_fem_test.json')
+fetch('http://127.0.0.1/chessjs/jagada_150321_italiana.json')
   .then(response => response.json())
   .then(data => {
-
     const fen = data.posicion.fen;
     const jugada = fen;
     stockfish.postMessage("uci");

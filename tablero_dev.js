@@ -29,6 +29,7 @@ for(let x = 1; x <= 8; x++){
         casilla.id = columnas[x]+""+y+"";
         casilla.setAttribute("ondrop", 'drop(event)');
         casilla.setAttribute("ondragover","allowDrop(event)");
+        casilla.setAttribute("draggable", false);
         fila.appendChild(casilla);
         colorBool = false;
     }else{
